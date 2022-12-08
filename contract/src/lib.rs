@@ -77,7 +77,7 @@ impl Contract {
         result
     }
 
-    // return array of indexes for challenges for a given account_id. Every index < DICTIONARY_VALUES
+    // return array of indexes for challenges for a given account_id. Every index in unique and smaller then the `DICTIONARY_VALUES`
     pub fn get_turns(&self, account_id: AccountId) -> Vec<u32> {
         let hash = format!("{:x}", Sha256::digest(account_id.as_bytes()));
 
@@ -90,7 +90,7 @@ impl Contract {
         })
     }
 
-    // finalize game. Read data from social, verify, calculate score and create NFT & Social badge for winners
+    // finalize the game. Read data from social, verify, calculate score and create NFT & Social badge for winners
     #[payable]
     pub fn nft_mint(&mut self, receiver_id: AccountId) -> PromiseOrValue<usize> {
         let account_id = env::predecessor_account_id();
