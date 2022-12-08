@@ -29,11 +29,14 @@ impl Contract {
         let mut account_data: Map<String, Value> = Map::new();
         account_data.insert(account_id.to_string(), Value::String("".to_string()));
 
+        let mut holder_data: Map<String, Value> = Map::new();
+        holder_data.insert("holder".to_string(), Value::Object(account_data));
+
         let mut badge_data: Map<String, Value> = Map::new();
-        badge_data.insert(badge, Value::Object(account_data));
+        badge_data.insert(badge, Value::Object(holder_data));
 
         let mut app_data: Map<String, Value> = Map::new();
-        app_data.insert(NEAR_SOCIAL_APP_NAME.to_string(), Value::Object(badge_data));
+        app_data.insert("badge".to_string(), Value::Object(badge_data));
 
         let mut data: Map<String, Value> = Map::new();
         data.insert(env::current_account_id().to_string(), Value::Object(app_data));
