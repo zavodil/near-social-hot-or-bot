@@ -1,0 +1,67 @@
+Arguments: 
+  /Users/alice/.nvm/versions/node/v18.3.0/bin/node /Users/alice/.nvm/versions/node/v17.4.0/bin/yarn build
+
+PATH: 
+  /Users/alice/.nvm/versions/node/v18.3.0/bin:/Users/alice/.nvm/versions/node/v18.3.0/bin:/Users/alice/.nvm/versions/node/v17.4.0/bin:/Users/alice/.nvm/versions/node/v17.4.0/bin:/Users/alice/.nvm/versions/node/v17.4.0/bin:/Users/alice/.nvm/versions/node/v17.4.0/bin:/Users/alice/.nvm/versions/node/v17.4.0/bin/yarn:/Users/alice/.nvm/versions/node/v17.4.0/bin/node:/Users/alice/.nvm/versions/node/v17.4.0/bin/npm:/Users/alice/.nvm/versions/node/v17.4.0/bin:/Users/alice/.meteor:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/alice/.cargo/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/alice/projects/hot-or-bot/node_modules/.bin:/Users/alice/.nvm/versions/node/v17.4.0/bin/yarn:/Users/alice/.nvm/versions/node/v17.4.0/bin/node:/Users/alice/.nvm/versions/node/v17.4.0/bin/npm:/Users/alice/.nvm/versions/node/v17.4.0/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  18.3.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/alice/projects/hot-or-bot/package.json: Unexpected token } in JSON at position 141
+      at JSON.parse (<anonymous>)
+      at /Users/alice/.nvm/versions/node/v17.4.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/alice/.nvm/versions/node/v17.4.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/alice/.nvm/versions/node/v17.4.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+  	"name": "near-contract",
+  	"version": "0.1.0",
+  	"license": "MIT",
+  	"scripts": {
+  		"build": "npm run build:contract && npm run build:web",
+  	},
+  	"devDependencies": {
+  		"@babel/core": "~7.12.3",
+  		"@babel/preset-env": "~7.12.1",
+  		"@babel/preset-react": "~7.12.5",
+  		"babel-jest": "~26.6.2",
+  		"shelljs": "~0.8.4",
+  		"jest": "~26.6.2",
+  		"jest-environment-node": "~26.6.2"
+  	},
+  	"dependencies": {
+  		"near-api-js": "^0.44.2",
+  		"node-fetch": "^2.6.1",
+  		"regenerator-runtime": "~0.13.5",
+  		"bn.js": "^5.2.1"
+  	},
+  	"jest": {
+  		"moduleNameMapper": {
+  			"\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+  			"\\.(css|less)$": "<rootDir>/src/__mocks__/fileMock.js"
+  		},
+  		"setupFiles": [
+  			"<rootDir>/src/jest.init.js"
+  		],
+  		"testEnvironment": "near-cli/test_environment",
+  		"testPathIgnorePatterns": [
+  			"<rootDir>/contract/",
+  			"<rootDir>/node_modules/"
+  		]
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

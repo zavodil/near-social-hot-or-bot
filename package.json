@@ -1,0 +1,9 @@
+{
+	"name": "near-contract",
+	"version": "0.1.0",
+	"license": "MIT",
+	"scripts": {
+		"build": "./build_local.sh",
+		"build:docker": "./build_docker.sh"
+	}
+}
